@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            //You will receive a number that represents how many lines we will get as input.On the next N lines, you will receive a string with 2 numbers, separated by a single space.You need to compare them.If the left number is greater than the right number, you need to print the sum of all digits in the left number, otherwise, print the sum of all digits in the right number.
+
             int n = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < n; i++)
@@ -16,52 +18,52 @@
                 if (spaceIndex != -1)
                 {
                     // writing down the two numbers from string input in diff variables
-                    string number1Str = input.Substring(0, spaceIndex);
-                    string number2Str = input.Substring(spaceIndex + 1);
+                    string leftNumberString = input.Substring(0, spaceIndex);
+                    string rightNumberString = input.Substring(spaceIndex + 1);
 
-                    if (long.TryParse(number1Str, out long number1) && long.TryParse(number2Str, out long number2))
+                    if (long.TryParse(leftNumberString, out long leftNumber) && long.TryParse(rightNumberString, out long rightNumber))
                     {
                         
                         long sum = 0;
                         // Comparing the number
-                        if (number1 >= number2)
+                        if (leftNumber >= rightNumber)
                         {
                             
                             // cheking for negative sign on space 0
-                            if (number1Str[0] == '-')
+                            if (leftNumberString[0] == '-')
                             {
                                 // adding up the numbers into the sum
-                                for (int j = 1; j < number1Str.Length; j++)
+                                for (int j = 1; j < leftNumberString.Length; j++)
                                 {
 
-                                    long nextNumber = (long)Char.GetNumericValue(number1Str[j]);
+                                    long nextNumber = (long)Char.GetNumericValue(leftNumberString[j]);
                                     sum += nextNumber;
                                 }
                             }
                             else
-                                for (int j = 0; j < number1Str.Length; j++)
+                                for (int j = 0; j < leftNumberString.Length; j++)
                                 {
 
-                                    long nextNumber = (long)Char.GetNumericValue(number1Str[j]);
+                                    long nextNumber = (long)Char.GetNumericValue(leftNumberString[j]);
                                     sum += nextNumber;
                                 }
                         }
-                        else if (number1 <= number2)
+                        else if (leftNumber <= rightNumber)
                         {
-                            if (number2Str[0] == '-')
+                            if (rightNumberString[0] == '-')
                             {
-                                for (int j = 1; j < number2Str.Length; j++)
+                                for (int j = 1; j < rightNumberString.Length; j++)
                                 {
 
-                                    long nextNumber = (long)Char.GetNumericValue(number2Str[j]);
+                                    long nextNumber = (long)Char.GetNumericValue(rightNumberString[j]);
                                     sum += nextNumber;
                                 }
                             }
                             else
-                                for (int j = 0; j < number2Str.Length; j++)
+                                for (int j = 0; j < rightNumberString.Length; j++)
                                 {
 
-                                    long nextNumber = (long)Char.GetNumericValue(number2Str[j]);
+                                    long nextNumber = (long)Char.GetNumericValue(rightNumberString[j]);
                                     sum += nextNumber;
                                 }
                         }
