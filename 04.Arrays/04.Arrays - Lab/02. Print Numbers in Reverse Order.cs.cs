@@ -5,7 +5,8 @@ namespace _02._Print_Numbers_in_Reverse_Order
     internal class PrintReversedNumbers
     {
         static void Main(string[] args)
-        {
+        {   
+            // Четем n числа от конзолата
             int n = int.Parse(Console.ReadLine());
 
             // Създаваме масив от стринг с дължината на n
