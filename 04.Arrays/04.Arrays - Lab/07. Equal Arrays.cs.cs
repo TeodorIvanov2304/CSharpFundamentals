@@ -48,7 +48,7 @@ namespace _07._Equal_Arrays
                 
             }
 
-            //След края на цикъла проверяваме дали flat = true, ако не , изпечатваме сумата
+            //След края на цикъла проверяваме дали flag = true, ако не , изпечатваме сумата
             if(!flag)
             {
                 Console.WriteLine($"Arrays are identical. Sum: {sum}");
