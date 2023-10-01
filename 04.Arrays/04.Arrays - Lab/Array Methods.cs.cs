@@ -60,6 +60,8 @@ namespace DEMO
             {
                 Console.WriteLine(item);
             }
+            // Сумира елементите на масива
+	    int sum = array.Sum();
         }
     }
 }
