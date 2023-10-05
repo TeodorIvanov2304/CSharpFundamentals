@@ -13,9 +13,15 @@ namespace _02._Grades
             //• 4.50 – 5.49 - "Very good"
             //• 5.50 – 6.00 - "Excellent"
 
+            // Четем променливата grade 
             double grade = double.Parse(Console.ReadLine());
-            PrintGrade(grade);
 
+            //Подаваме grade като параметър на PrintGrade(параметър/grade);
+            PrintGrade(grade); 
+
+            //Четем нова променлива newGrade и я подаваме като нов параметър newGrade към същия метод
+            double newGrade = double.Parse(Console.ReadLine());
+            PrintGrade(newGrade);
         }
 
         static void PrintGrade(double grade)
