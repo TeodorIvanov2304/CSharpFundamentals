@@ -27,17 +27,23 @@ namespace _10._Multiply_Evens_by_Odds
         }
 
         //Метод с целият алгоритъм, който връща резултата
-        private static int MultyplyEvensByOds(int number)
+        static int MultyplyEvensByOds(int number)
         {
             int evenSum = 0;
             int oddSum = 0;
             AlgorithmForFindingSum(ref number, ref evenSum, ref oddSum);
+            return ReturnMultipliedSum(evenSum, oddSum);
+        }
+
+        //Метод, който умножава сумите
+        static int ReturnMultipliedSum(int evenSum, int oddSum)
+        {
             return evenSum * oddSum;
         }
 
 
         //Намираме сумата на всички цифри
-        private static void AlgorithmForFindingSum(ref int number, ref int evenSum, ref int oddSum)
+        static void AlgorithmForFindingSum(ref int number, ref int evenSum, ref int oddSum)
         {
             while (number > 0)
             {
@@ -48,7 +54,7 @@ namespace _10._Multiply_Evens_by_Odds
         }
 
         //Определяме дали цифрата е четна/нечетна и добавяме към съответната сума
-        private static void DetermineOddEvenAndSum(ref int evenSum, ref int oddSum, int currentNumber)
+        static void DetermineOddEvenAndSum(ref int evenSum, ref int oddSum, int currentNumber)
         {
             if (currentNumber % 2 == 0)
             {
@@ -61,19 +67,19 @@ namespace _10._Multiply_Evens_by_Odds
         }
 
         //Намиране на текущото число
-        private static int DetermineCurrentNumber(int number)
+        static int DetermineCurrentNumber(int number)
         {
             return number % 10;
         }
 
         //Намаляване на числото с 1 цифра, като го делим на 10
-        private static int DivideBy10(int number)
+        static int DivideBy10(int number)
         {
             return number / 10;
         }
 
         //Конвертиране на число в абсолютната му стойност
-        private static int ConvertToAbsoluteValue(int number)
+        static int ConvertToAbsoluteValue(int number)
         {
             number = Math.Abs(number);
             return number;
