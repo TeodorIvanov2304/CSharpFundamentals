@@ -39,12 +39,17 @@
         // ================================ METHOD OVERLOADS ===============================================
         static int GetMax(int a, int b) // Проверява дали числото а > b int
         {
+            return CompareIntValue(a, b); // Викаме другият метод CompareIntValue
+        }
+
+        private static int CompareIntValue(int a, int b) // Сравнява по int стойност
+        {
             return a > b ? a : b;
         }
 
         static char GetMax(char a, char b) //Проверява дали символът е > от другия символ по ASCII char
         {
-            return a > b ? a : b;
+            return (char)CompareIntValue(a, b); // Викаме другият метод CompareIntValue, с char каст
         }
 
         static string GetMax(string a, string b) // Проверява дали string а > b string
