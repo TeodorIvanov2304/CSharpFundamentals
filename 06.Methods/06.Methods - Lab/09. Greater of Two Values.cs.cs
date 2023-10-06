@@ -49,7 +49,7 @@
 
         static string GetMax(string a, string b) // Проверява дали string а > b string
         {
-            return a.Equals(b) ? a : b;
+            return a.Equals(b) ? a : b; // .Equals сравнява два стринга
         }
         //==================================================================================================
     }
