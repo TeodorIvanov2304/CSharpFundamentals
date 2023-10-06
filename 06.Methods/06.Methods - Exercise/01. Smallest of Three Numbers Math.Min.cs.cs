@@ -1,39 +1,23 @@
 ﻿namespace _01._Smallest_of_Three_Numbers
 {
-    internal class SmallestOfThreeNumbers
+    internal class Program
     {
         static void Main(string[] args)
         {
-            int firstInteger = int.Parse(Console.ReadLine());
-            int secondInteger = int.Parse(Console.ReadLine());
-            int thirdInteger = int.Parse(Console.ReadLine());
+            //Reading three variables to compare
+            int first = int.Parse(Console.ReadLine());
+            int second = int.Parse(Console.ReadLine());
+            int third = int.Parse(Console.ReadLine());
 
-            int smallestInteger = 0;
-            smallestInteger = IntegersCompare(firstInteger, secondInteger, thirdInteger, smallestInteger);
-            PrintSmallest(smallestInteger);
+            //Printing the smallest variable
+            Console.WriteLine(CompareVariables(first, second, third));
         }
 
-        static void PrintSmallest(int smallestInteger)
+        public static int CompareVariables(int first, int second, int third)
         {
-            Console.WriteLine(smallestInteger);
-        }
-
-        static int IntegersCompare(int firstInteger, int secondInteger, int thirdInteger, int smallestInteger)
-        {
-            if (firstInteger <= secondInteger && firstInteger <= thirdInteger)
-            {
-                smallestInteger = firstInteger;
-            }
-            else if (secondInteger <= thirdInteger && secondInteger <= firstInteger)
-            {
-                smallestInteger = secondInteger;
-            }
-            else if (thirdInteger <= firstInteger && thirdInteger <= secondInteger)
-            {
-                smallestInteger = thirdInteger;
-            }
-
-            return smallestInteger;
+            //Comparing the 3 variables with double Math.Min Method
+            int result = Math.Min(first, Math.Min(second, third));
+            return result;
         }
     }
 }
