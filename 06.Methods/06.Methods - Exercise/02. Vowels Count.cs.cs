@@ -1,39 +1,36 @@
-﻿namespace _01._Smallest_of_Three_Numbers
+﻿namespace _02._Vowels_Count
 {
-    internal class SmallestOfThreeNumbers
+    internal class VowelsCount
     {
         static void Main(string[] args)
         {
-            int firstInteger = int.Parse(Console.ReadLine());
-            int secondInteger = int.Parse(Console.ReadLine());
-            int thirdInteger = int.Parse(Console.ReadLine());
+            string input = Console.ReadLine();
+            int vowelCounter = 0;
+            vowelCounter = StringIterrator(input, vowelCounter);
+            Console.WriteLine(vowelCounter);
 
-            int smallestInteger = 0;
-            smallestInteger = IntegersCompare(firstInteger, secondInteger, thirdInteger, smallestInteger);
-            PrintSmallest(smallestInteger);
         }
 
-        static void PrintSmallest(int smallestInteger)
+        public static int StringIterrator(string input, int vowelCounter)
         {
-            Console.WriteLine(smallestInteger);
+            for (int i = 0; i < input.Length; i++)
+            {
+                vowelCounter = CountVowels(input, vowelCounter, i);
+            }
+
+            return vowelCounter;
         }
 
-        static int IntegersCompare(int firstInteger, int secondInteger, int thirdInteger, int smallestInteger)
+        public static int CountVowels(string input, int vowelCounter, int i)
         {
-            if (firstInteger <= secondInteger && firstInteger <= thirdInteger)
+            bool isVowel = "aeiouAEIOU".Contains(input[i]);
+
+            if (isVowel)
             {
-                smallestInteger = firstInteger;
-            }
-            else if (secondInteger <= thirdInteger && secondInteger <= firstInteger)
-            {
-                smallestInteger = secondInteger;
-            }
-            else if (thirdInteger <= firstInteger && thirdInteger <= secondInteger)
-            {
-                smallestInteger = thirdInteger;
+                vowelCounter++;
             }
 
-            return smallestInteger;
+            return vowelCounter;
         }
     }
 }
