@@ -28,7 +28,7 @@ namespace _04._Tribonacci_Sequence
         {
             for (int i = 0; i < tribonacci.Length; i++)
             {
-                //Първите 2 числа от Трибоначи трябваа да са 1
+                //Първите 2 числа от Трибоначи трябва да са 1
                 if (i < 2)
                 {
                     tribonacci[i] = 1;
