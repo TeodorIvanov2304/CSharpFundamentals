@@ -1,9 +1,3 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.ComponentModel;
-using System.IO;
-using System;
-using System.Diagnostics;
-
 namespace _01._Computer_Store
 {
     internal class Program
