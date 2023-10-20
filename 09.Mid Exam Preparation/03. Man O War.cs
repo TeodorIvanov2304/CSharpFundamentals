@@ -1,9 +1,3 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Diagnostics;
-using System;
-
 namespace _03._Man_O_War
 {
     internal class Program
