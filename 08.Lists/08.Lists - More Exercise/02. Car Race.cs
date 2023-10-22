@@ -33,6 +33,7 @@
                 rightCar += numbers[i];
             }
 
+            // The fastest car wins
             if (rightCar<leftCar)
             {
                 Console.WriteLine($"The winner is right with total time: {rightCar}");
