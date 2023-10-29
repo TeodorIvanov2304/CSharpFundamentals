@@ -26,35 +26,30 @@
             for (int i = 0; i < messages; i++)
             {
                 string randomPhrase = "";
-                for (int j = 0; j < phrases.Count; j++)
-                {
-                    int randomPhraseIndex = random.Next(0, phrases.Count);
-                    randomPhrase = phrases[randomPhraseIndex];
-                }
+                randomPhrase = CheckRandomIndex(phrases, random, randomPhrase);
 
                 string randomEvent = "";
-                for (int j = 0; j < events.Count; j++)
-                {
-                    int randomEventIndex = random.Next(0, phrases.Count);
-                    randomEvent = events[randomEventIndex];
-                }
-
+                randomEvent = CheckRandomIndex(events, random, randomEvent);
+                
                 string randomAuthor = "";
-                for (int j = 0; j < authors.Count; j++)
-                {
-                    int randomAuthorIndex = random.Next(0, authors.Count);
-                    randomAuthor = authors[randomAuthorIndex];
-                }
+                randomAuthor = CheckRandomIndex(authors,random, randomAuthor);
 
                 string randomCity = "";
-                for (int j = 0; j < cities.Count; j++)
-                {
-                    int randomCityIndex = random.Next(0, cities.Count);
-                    randomCity = cities[randomCityIndex];
-                }
+                randomCity = CheckRandomIndex(cities,random, randomCity);
 
                 Console.WriteLine($"{randomPhrase} {randomEvent} {randomAuthor} – {randomCity}.");
             }
+        }
+
+        public static string CheckRandomIndex(List<string> phrases, Random random, string randomPhrase)
+        {
+            for (int j = 0; j < phrases.Count; j++)
+            {
+                int randomPhraseIndex = random.Next(0, phrases.Count);
+                randomPhrase = phrases[randomPhraseIndex];
+            }
+
+            return randomPhrase;
         }
     }
 }
