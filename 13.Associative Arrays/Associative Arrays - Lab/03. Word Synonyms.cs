@@ -13,7 +13,8 @@
                 string word = Console.ReadLine();
                 string synonym = Console.ReadLine();
                 if (!synonyms.ContainsKey(word))
-                {
+                {   
+                    //Ако не напишеш new List, няма да работи
                     synonyms[word] = new List<string>
                     {
                         synonym
@@ -23,18 +24,14 @@
                 }
                 else
                 {
-                    synonyms[word].Add(", " + synonym);
+                    synonyms[word].Add(synonym);
                 }
             }
 
+            //Със string.Join можем да изпечатама всички стойноти срещу ключа, ако са повече от 1
             foreach (KeyValuePair<string,List<string>> kvp in synonyms)
             {
-                Console.Write($"{kvp.Key} - ");
-                foreach (string value in kvp.Value)
-                {
-                    Console.Write($"{value}");
-                }
-                Console.WriteLine();
+                Console.WriteLine($"{kvp.Key} - {string.Join(", ",kvp.Value)}");
             }
         }
 
