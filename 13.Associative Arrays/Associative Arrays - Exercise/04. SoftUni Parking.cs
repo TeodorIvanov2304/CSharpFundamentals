@@ -14,7 +14,8 @@
                 string command = commandsTokens[0];
                 string username = commandsTokens[1];
                 switch (command)
-                {
+                {   
+                    //REGISTER USER
                     case "register":
                         string licensplate = commandsTokens[2];
                         if (!database.ContainsKey(username))
@@ -27,6 +28,8 @@
                             Console.WriteLine($"ERROR: already registered with plate number {licensplate}");
                         }
                         break;
+
+                        //DELETE USER
                     case "unregister":
                         if (!database.ContainsKey(username))
                         {
