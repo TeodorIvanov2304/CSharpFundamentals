@@ -17,15 +17,15 @@
                 {   
                     //REGISTER USER
                     case "register":
-                        string licensplate = commandsTokens[2];
+                        string licenseplate = commandsTokens[2];
                         if (!database.ContainsKey(username))
                         {
-                            database.Add(username, licensplate);
-                            Console.WriteLine($"{username} registered {licensplate} successfully");
+                            database.Add(username, licenseplate);
+                            Console.WriteLine($"{username} registered {licenseplate} successfully");
                         }
                         else
                         {
-                            Console.WriteLine($"ERROR: already registered with plate number {licensplate}");
+                            Console.WriteLine($"ERROR: already registered with plate number {licenseplate}");
                         }
                         break;
 
