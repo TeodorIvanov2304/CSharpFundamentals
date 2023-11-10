@@ -13,7 +13,8 @@
                 // Премахваме частта от текст(filter) от text с метода Remove, и IndexOf
                 // Където filter е началният индекс, от който премахваме
                 // До filter.Length , т.е докато свърши филтъра
-                text = text.Remove(text.IndexOf(filter), filter.Length);
+                int statrIndex = text.IndexOf(filter);
+                text = text.Remove(statrIndex, filter.Length);
             }
             Console.WriteLine(text);
         }
