@@ -24,8 +24,7 @@ namespace _01._Furniture
         {   
             //Създаваме променлива, която пази шаблона от regex101
             string pattern = @">>([A-Z]+[a-z]*)<<([+-]?[0-9]*[.]?[0-9]+)!(\d+)\b";
-            //Създаваме regex променлива
-            Regex regex = new Regex(pattern);
+
             //Създаваме лист от тип Furniture
             List<Furniture> furnitures = new List<Furniture>();
             //Четен вход, докато не получим команда Purchase
