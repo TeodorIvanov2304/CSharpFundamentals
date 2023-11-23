@@ -1,5 +1,4 @@
 ﻿using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace _01._Secret_Chat
 {
